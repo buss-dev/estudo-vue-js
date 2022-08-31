@@ -11,10 +11,10 @@
         ></v-toolbar-title
       >
       <v-spacer></v-spacer>
-      <v-btn class="hidden-md-and-down" rounded text :to="{ name: 'register' }"
+      <v-btn class="d-none d-md-flex" rounded text :to="{ name: 'register' }"
         >REGISTER</v-btn
       >
-      <v-btn text rounded>
+      <v-btn text rounded :to="{ name: 'user' }">
         <v-icon>mdi-account</v-icon>
       </v-btn>
     </v-app-bar>

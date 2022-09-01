@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-card max-width="374" class="mx-auto my-12">
+  <v-container>
+    <v-card max-width="374" class="mx-auto my-4">
       <v-card-title>{{
         user.results[0].name.first + ' ' + user.results[0].name.last
       }}</v-card-title>
@@ -10,19 +10,13 @@
         {{ date + ', ' + user.results[0].registered.age }}
       </v-card-text>
     </v-card>
-  </div>
+  </v-container>
 </template>
 
 <script>
-import UserService from '@/services/UserService'
 import { mapState } from 'vuex'
 
 export default {
-  created() {
-    UserService.getUser().then(
-      (response) => (this.$store.state.user = response.data)
-    )
-  },
   computed: {
     ...mapState(['user']),
     user() {
